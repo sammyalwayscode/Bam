@@ -18,12 +18,10 @@ const SideBar = ({ setToggle, toggle }) => {
           onClick={() => {
             setToggle(false);
           }}
-          to="/pricing"
         >
           <span>Price List</span>
         </Navs>
         <Navs
-          to="/contact"
           onClick={() => {
             setToggle(false);
           }}
@@ -31,7 +29,6 @@ const SideBar = ({ setToggle, toggle }) => {
           <span>Contact</span>
         </Navs>
         <Navs
-          to="/order"
           onClick={() => {
             setToggle(false);
           }}
@@ -59,7 +56,7 @@ const Container = styled.div`
   z-index: 10;
 `;
 const Wrapper = styled.div``;
-const Navs = styled(NavLink)`
+const Navs = styled.div`
   text-decoration: none;
   margin: 25px 0;
   color: #fff;

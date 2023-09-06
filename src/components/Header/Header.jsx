@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { RiHomeSmileFill } from "react-icons/ri";
 import { IoMdPricetags, IoMdContact } from "react-icons/io";
-import { HiShoppingCart } from "react-icons/hi";
+import { HiMenuAlt3, HiShoppingCart } from "react-icons/hi";
 import { CgSmartHomeWashMachine } from "react-icons/cg";
 import { GiCancel } from "react-icons/gi";
 import SideBar from "./Sidebar";
@@ -56,7 +56,7 @@ const Header = () => {
             {toggle ? (
               <GiCancel onClick={toggleChange} size="25px" />
             ) : (
-              <CgSmartHomeWashMachine onClick={toggleChange} size="25px" />
+              <HiMenuAlt3 onClick={toggleChange} size="25px" />
             )}
           </Side>
         </Wrapper>
