@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import InterImg from "../../assets/inter.jpg";
 
 const Interview = () => {
   return (
@@ -6,7 +7,7 @@ const Interview = () => {
       <Wrapper>
         <HoldDiv>
           <InterViewImage>
-            <img src="" alt="" />
+            <img src={InterImg} alt="" />
           </InterViewImage>
           <InterviewContent>
             <ContentHold>
@@ -38,29 +39,76 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 1320px) {
+    height: 100%;
+  }
 `;
 const Wrapper = styled.div`
   width: 85%;
   /* display: flex;
   justify-content: center; */
+  @media (max-width: 600px) {
+    width: 95%;
+  }
 `;
 const HoldDiv = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 const InterViewImage = styled.div`
   height: 400px;
-  width: 600px;
+  width: 550px;
   background-color: azure;
   margin: 0 15px;
+  img {
+    width: 550px;
+    height: 400px;
+    object-fit: cover;
+  }
+  @media (max-width: 1320px) {
+    margin-top: 20px;
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
 `;
 const InterviewContent = styled.div`
-  width: 600px;
+  width: 500px;
   margin: 0 15px;
   display: flex;
   align-items: center;
+  @media (max-width: 1320px) {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 const ContentHold = styled.div``;
-const Title = styled.div``;
-const SubTitle = styled.div``;
-const Content = styled.div``;
+const Title = styled.div`
+  font-weight: 800;
+  font-size: 35px;
+  @media (max-width: 600px) {
+    font-size: 25px;
+    font-weight: 900;
+  }
+`;
+const SubTitle = styled.div`
+  margin: 10px 0;
+  font-size: 20px;
+  font-weight: 800;
+  @media (max-width: 600px) {
+    font-size: 18px;
+  }
+`;
+const Content = styled.div`
+  margin-bottom: 20px;
+`;
