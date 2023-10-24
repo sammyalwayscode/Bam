@@ -1,12 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
-import { RiHomeSmileFill } from "react-icons/ri";
-import { IoMdPricetags, IoMdContact } from "react-icons/io";
-import { HiMenuAlt3, HiShoppingCart } from "react-icons/hi";
-import { CgSmartHomeWashMachine } from "react-icons/cg";
+import { HiMenuAlt3 } from "react-icons/hi";
 import { GiCancel } from "react-icons/gi";
 import SideBar from "./Sidebar";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
