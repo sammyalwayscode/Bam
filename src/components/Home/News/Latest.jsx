@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import ImgOne from "../../../assets/lat2.jpg";
 
 const Latest = () => {
   return (
@@ -14,7 +15,7 @@ const Latest = () => {
           <MainHold>
             <CardDiv>
               <CardImage>
-                <img src="" alt="" />
+                <img src={ImgOne} alt="" />
               </CardImage>
               <CardHold>
                 <PostTime>2 minutes ago</PostTime>
@@ -120,7 +121,7 @@ const MainHold = styled.div`
 const CardDiv = styled.div`
   height: 320px;
   width: 265px;
-  background-color: cyan;
+  /* background-color: cyan; */
   margin: 10px;
 
   @media (max-width: 500px) {
@@ -132,6 +133,12 @@ const CardImage = styled.div`
   height: 180px;
   width: 265px;
   background-color: azure;
+
+  img {
+    width: 265px;
+    height: 180px;
+    object-fit: cover;
+  }
 `;
 
 const CardHold = styled.div`
