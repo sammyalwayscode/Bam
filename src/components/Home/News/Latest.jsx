@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import ImgOne from "../../../assets/lat2.jpg";
+import ImgTwo from "../../../assets/lat3.jpg";
+import ImgThree from "../../../assets/lat4.jpg";
+import ImgFour from "../../../assets/lat5.jpg";
 
 const Latest = () => {
   return (
@@ -18,8 +21,8 @@ const Latest = () => {
                 <img src={ImgOne} alt="" />
               </CardImage>
               <CardHold>
-                <PostTime>2 minutes ago</PostTime>
-                <Title>INCOMING: HARRY WRIGHT</Title>
+                <PostTime>25th October, 2023</PostTime>
+                <Title>The Friendly Live Match</Title>
                 <ShortDesc>
                   We are delighted to announce the signing of goalkeeper Harry
                   Wright. The 24-year-old, came through
@@ -29,11 +32,11 @@ const Latest = () => {
             </CardDiv>
             <CardDiv>
               <CardImage>
-                <img src="" alt="" />
+                <img src={ImgTwo} alt="" />
               </CardImage>
               <CardHold>
-                <PostTime>2 minutes ago</PostTime>
-                <Title>INCOMING: HARRY WRIGHT</Title>
+                <PostTime>20th October, 2023</PostTime>
+                <Title>Our Fanbase Excitment</Title>
                 <ShortDesc>
                   We are delighted to announce the signing of goalkeeper Harry
                   Wright. The 24-year-old, came through
@@ -43,11 +46,11 @@ const Latest = () => {
             </CardDiv>
             <CardDiv>
               <CardImage>
-                <img src="" alt="" />
+                <img src={ImgThree} alt="" />
               </CardImage>
               <CardHold>
-                <PostTime>2 minutes ago</PostTime>
-                <Title>INCOMING: HARRY WRIGHT</Title>
+                <PostTime>17th October, 2023</PostTime>
+                <Title>A Better Rematch</Title>
                 <ShortDesc>
                   We are delighted to announce the signing of goalkeeper Harry
                   Wright. The 24-year-old, came through
@@ -57,11 +60,11 @@ const Latest = () => {
             </CardDiv>
             <CardDiv>
               <CardImage>
-                <img src="" alt="" />
+                <img src={ImgFour} alt="" />
               </CardImage>
               <CardHold>
-                <PostTime>2 minutes ago</PostTime>
-                <Title>INCOMING: HARRY WRIGHT</Title>
+                <PostTime>09th October, 2023</PostTime>
+                <Title>The Best Stadium</Title>
                 <ShortDesc>
                   We are delighted to announce the signing of goalkeeper Harry
                   Wright. The 24-year-old, came through
@@ -145,6 +148,7 @@ const CardHold = styled.div`
   strong {
     font-size: 14px;
     font-weight: 800;
+    color: #087cc5;
   }
 `;
 const PostTime = styled.div`
@@ -154,6 +158,7 @@ const PostTime = styled.div`
 const Title = styled.div`
   font-size: 18px;
   font-weight: 800;
+  text-transform: uppercase;
 `;
 const ShortDesc = styled.div`
   font-size: 13px;
