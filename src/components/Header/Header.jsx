@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { GiCancel } from "react-icons/gi";
 import SideBar from "./Sidebar";
+import { Link } from "react-router-dom";
 // import { NavLink } from "react-router-dom";
 
 const Header = () => {
@@ -41,13 +42,20 @@ const Header = () => {
               <span>Shop</span>
             </Navs>
 
-            <button
+            <Link
+              to="/newpost"
               style={{
-                fontFamily: "Montserrat",
+                textDecoration: "none",
               }}
             >
-              Sign Up
-            </button>
+              <button
+                style={{
+                  fontFamily: "Montserrat",
+                }}
+              >
+                Post Report
+              </button>
+            </Link>
           </Navigations>
           <Side>
             {toggle ? (
@@ -92,7 +100,8 @@ const Navigations = styled.div`
   }
 
   button {
-    padding: 10px 50px;
+    width: 150px;
+    height: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
