@@ -1,7 +1,25 @@
 import styled from "styled-components";
-import ImgOne from "../../../assets/lat1.jpeg";
+// import ImgOne from "../../../assets/lat1.jpeg";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import moment from "moment";
 
 const Community = () => {
+  const [newsFeeds, setNewsFeed] = useState([]);
+
+  const getProduct = async () => {
+    const URL = "http://localhost:2099/api/allnewsfeed";
+    await axios.get(URL).then((res) => {
+      setNewsFeed(res.data.data);
+    });
+  };
+
+  console.log(newsFeeds);
+
+  useEffect(() => {
+    getProduct();
+  }, []);
+
   return (
     <Container>
       <Wrapper>
@@ -13,62 +31,19 @@ const Community = () => {
 
         <CardCtrl>
           <MainHold>
-            <CardDiv>
-              <CardImage>
-                <img src={ImgOne} alt="" />
-              </CardImage>
-              <CardHold>
-                <PostTime>2 minutes ago</PostTime>
-                <Title>INCOMING: HARRY WRIGHT</Title>
-                <ShortDesc>
-                  We are delighted to announce the signing of goalkeeper Harry
-                  Wright. The 24-year-old, came through
-                </ShortDesc>
-                <strong>Continue Reading</strong>
-              </CardHold>
-            </CardDiv>
-            <CardDiv>
-              <CardImage>
-                <img src="" alt="" />
-              </CardImage>
-              <CardHold>
-                <PostTime>2 minutes ago</PostTime>
-                <Title>INCOMING: HARRY WRIGHT</Title>
-                <ShortDesc>
-                  We are delighted to announce the signing of goalkeeper Harry
-                  Wright. The 24-year-old, came through
-                </ShortDesc>
-                <strong>Continue Reading</strong>
-              </CardHold>
-            </CardDiv>
-            <CardDiv>
-              <CardImage>
-                <img src="" alt="" />
-              </CardImage>
-              <CardHold>
-                <PostTime>2 minutes ago</PostTime>
-                <Title>INCOMING: HARRY WRIGHT</Title>
-                <ShortDesc>
-                  We are delighted to announce the signing of goalkeeper Harry
-                  Wright. The 24-year-old, came through
-                </ShortDesc>
-                <strong>Continue Reading</strong>
-              </CardHold>
-            </CardDiv>
-            <CardDiv>
-              <CardImage>
-                <img src="" alt="" />
-              </CardImage>
-              <CardHold>
-                <PostTime>2 minutes ago</PostTime>
-                <Title>INCOMING: HARRY WRIGHT</Title>
-                <ShortDesc>
-                  We are delighted to announce the signing of goalkeeper Harry
-                  Wright. The 24-year-old, came through
-                </ShortDesc>
-                <strong>Continue Reading</strong>
-              </CardHold>
-            </CardDiv>
+            {newsFeeds?.map(({ _id, newsImage, createdAt, title, details }) => (
+              <CardDiv key={_id}>
+                <CardImage>
+                  <img src={newsImage} alt="" />
+                </CardImage>
+                <CardHold>
+                  <PostTime> {moment(createdAt).fromNow()} </PostTime>
+                  <Title>{title}</Title>
+                  <ShortDesc>{details}</ShortDesc>
+                  <strong>Continue Reading</strong>
+                </CardHold>
+              </CardDiv>
+            ))}
           </MainHold>
         </CardCtrl>
       </Wrapper>
@@ -120,9 +95,9 @@ const MainHold = styled.div`
 
 const CardDiv = styled.div`
   height: 320px;
-  width: 265px;
+  width: 250px;
   /* background-color: cyan; */
-  margin: 10px;
+  margin: 10px 5px;
 
   @media (max-width: 500px) {
     justify-content: center;
@@ -131,11 +106,11 @@ const CardDiv = styled.div`
 
 const CardImage = styled.div`
   height: 180px;
-  width: 265px;
+  width: 250px;
   background-color: azure;
 
   img {
-    width: 265px;
+    width: 250px;
     height: 180px;
     object-fit: cover;
   }

@@ -47,6 +47,8 @@ const Wrapper = styled.div`
   width: 85%;
   /* display: flex;
   justify-content: center; */
+  margin: 10px 0;
+
   @media (max-width: 600px) {
     width: 95%;
   }
@@ -79,7 +81,7 @@ const InterViewImage = styled.div`
   }
 `;
 const InterviewContent = styled.div`
-  width: 500px;
+  width: 450px;
   margin: 0 15px;
   display: flex;
   align-items: center;

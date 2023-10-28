@@ -87,9 +87,11 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
+  background-color: red;
 `;
 const Wrapper = styled.div`
   width: 85%;
+  background-color: darkgoldenrod;
 `;
 const DateInfo = styled.div`
   hr {
@@ -123,9 +125,9 @@ const MainHold = styled.div`
 
 const CardDiv = styled.div`
   height: 320px;
-  width: 265px;
-  /* background-color: cyan; */
-  margin: 10px;
+  width: 250px;
+  background-color: cyan;
+  margin: 5px;
 
   @media (max-width: 500px) {
     justify-content: center;
@@ -134,11 +136,11 @@ const CardDiv = styled.div`
 
 const CardImage = styled.div`
   height: 180px;
-  width: 265px;
+  width: 250px;
   background-color: azure;
 
   img {
-    width: 265px;
+    width: 250px;
     height: 180px;
     object-fit: cover;
   }
