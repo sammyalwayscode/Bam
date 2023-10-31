@@ -1,40 +1,54 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const SideBar = ({ setToggle, toggle }) => {
+// eslint-disable-next-line react/prop-types
+const SideBar = ({ setToggle }) => {
   return (
     <Container>
       <Wrapper>
-        <Navs
+        <Link
           to="/"
+          style={{
+            textDecoration: "none",
+          }}
+        >
+          <Navs
+            to="/"
+            onClick={() => {
+              setToggle(false);
+            }}
+          >
+            <span>Home</span>
+          </Navs>
+        </Link>
+        <Navs
           onClick={() => {
             setToggle(false);
           }}
         >
-          <span>Home</span>
+          <span>Tickets</span>
         </Navs>
         <Navs
           onClick={() => {
             setToggle(false);
           }}
         >
-          <span>Price List</span>
+          <span>News</span>
         </Navs>
-        <Navs
-          onClick={() => {
-            setToggle(false);
+        <Link
+          to="/newpost"
+          style={{
+            textDecoration: "none",
           }}
         >
-          <span>Contact</span>
-        </Navs>
-        <Navs
-          onClick={() => {
-            setToggle(false);
-          }}
-        >
-          <button>Place Order</button>
-        </Navs>
+          <Navs
+            onClick={() => {
+              setToggle(false);
+            }}
+          >
+            <button>Post Report</button>
+          </Navs>
+        </Link>
       </Wrapper>
     </Container>
   );

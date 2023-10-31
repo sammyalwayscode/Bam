@@ -1,29 +1,48 @@
 import styled from "styled-components";
 import bgImg from "../../assets/lat2.jpg";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import moment from "moment";
 
 const CardDetail = () => {
+  const [oneNewsFeeds, setOneNewsFeed] = useState({});
+  const { id } = useParams();
+  console.log(id);
+
+  const getOneNewsFeed = async () => {
+    const liveURL = "https://allstar-api.onrender.com";
+    // const localURL = "http://localhost:2099"
+    const URL = `${liveURL}/api/news/${id}`;
+    await axios.get(URL).then((res) => {
+      setOneNewsFeed(res.data.data);
+    });
+  };
+
+  console.log(oneNewsFeeds);
+
+  useEffect(() => {
+    getOneNewsFeed();
+  }, []);
   return (
     <Container>
       <Wrapper>
-        <DetailImage>
+        <DetailImage
+          style={{
+            backgroundImage: `url(${oneNewsFeeds?.newsImage})`,
+          }}
+        >
           <MainCtrl>
-            <Date>21st Oct 2023</Date>
-            <Info>INCOMING: HARRY WRIGHT</Info>
+            <Date>{moment(oneNewsFeeds?.createdAt).format("LLL")}</Date>
+            <Info>{oneNewsFeeds?.title}</Info>
           </MainCtrl>
         </DetailImage>
 
         <DetailContent>
-          <p>
-            The 24-year-old, came through the ranks at Ipswich Town before
-            moving to Fleetwood Town, where he left in 2022. He’s also played
-            for Cheadle Town earlier this month, making two appearances, one in
-            a league fixture against AFC Liverpool and the other in the Macron
-            Cup vs Sandbach United. Harry is the son of former professional
-            goalkeeper Richard Wright.
-          </p>
+          <p>{oneNewsFeeds?.details}</p>
 
           <p>
-            Posted By: <strong>Olorunda Samuel</strong>
+            Posted By: <strong> {oneNewsFeeds?.reporterName} </strong>
           </p>
         </DetailContent>
       </Wrapper>
@@ -40,7 +59,7 @@ const Wrapper = styled.div``;
 const DetailImage = styled.div`
   height: 70vh;
   background-color: cornflowerblue;
-  background-image: url(${bgImg});
+  /* background-image: url(${bgImg}); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

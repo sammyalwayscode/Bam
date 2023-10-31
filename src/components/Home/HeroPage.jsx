@@ -11,7 +11,7 @@ const HeroPage = () => {
           <SectionCintentHold>
             <ContentDate>04th Sep 2023</ContentDate>
             <ContentTitle>
-              Match Info. Wythenshawe FC (A), Tue 5th Sep, 7.45pm ko
+              Match Info. Wythenshawe FC (A), Tue 5th Sep, 7.45pm CAT
             </ContentTitle>
             <SectionButtons>
               <Btn1>Latest News</Btn1>
@@ -45,7 +45,7 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   /* flex-wrap: wrap; */
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   @media (max-width: 800px) {
     flex-direction: column;
   }
@@ -95,6 +95,9 @@ const ContentTitle = styled.div`
   @media (max-width: 800px) {
     font-size: 30px;
   }
+  @media (max-width: 500px) {
+    font-size: 25px;
+  }
 `;
 const SectionButtons = styled.div`
   display: flex;
@@ -105,13 +108,18 @@ const SectionButtons = styled.div`
   }
 `;
 const Btn1 = styled.div`
-  padding: 10px 10px;
+  height: 35px;
+  width: 150px;
   background-color: #087cc5;
   margin-right: 30px;
-  border-radius: 4px;
+  border-radius: 2px;
   font-weight: 600;
   font-size: 12px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   transition: all 350ms;
   :hover {
     transform: scale(1.1);
@@ -121,4 +129,5 @@ const Btn2 = styled.div`
   font-weight: 600;
   font-size: 12px;
   cursor: pointer;
+  width: 120px;
 `;

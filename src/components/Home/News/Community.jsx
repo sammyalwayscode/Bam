@@ -3,12 +3,15 @@ import styled from "styled-components";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import moment from "moment";
+import { Link } from "react-router-dom";
 
 const Community = () => {
   const [newsFeeds, setNewsFeed] = useState([]);
 
   const getProduct = async () => {
-    const URL = "http://localhost:2099/api/allnewsfeed";
+    const liveURL = "https://allstar-api.onrender.com";
+    // const localURL = "http://localhost:2099"
+    const URL = `${liveURL}/api/allnewsfeed`;
     await axios.get(URL).then((res) => {
       setNewsFeed(res.data.data);
     });
@@ -24,7 +27,7 @@ const Community = () => {
     <Container>
       <Wrapper>
         <DateInfo>
-          <DateDiv>{Date.now()}</DateDiv>
+          <DateDiv>{moment().format("MMMM Do YYYY")}</DateDiv>
           <InfoDiv>Community News</InfoDiv>
           <hr />
         </DateInfo>
@@ -40,7 +43,9 @@ const Community = () => {
                   <PostTime> {moment(createdAt).fromNow()} </PostTime>
                   <Title>{title}</Title>
                   <ShortDesc>{details}</ShortDesc>
-                  <strong>Continue Reading</strong>
+                  <Link to={`/detail/${_id}`}>
+                    <strong>Continue Reading</strong>
+                  </Link>
                 </CardHold>
               </CardDiv>
             ))}
@@ -62,6 +67,10 @@ const Container = styled.div`
 `;
 const Wrapper = styled.div`
   width: 85%;
+
+  @media (max-width: 500px) {
+    width: 95%;
+  }
 `;
 const DateInfo = styled.div`
   hr {
@@ -80,6 +89,7 @@ const InfoDiv = styled.div`
   font-size: 35px;
   font-weight: 800;
   text-transform: uppercase;
+  line-height: normal;
 `;
 
 const CardCtrl = styled.div`
@@ -95,12 +105,14 @@ const MainHold = styled.div`
 
 const CardDiv = styled.div`
   height: 320px;
+  height: auto;
   width: 250px;
   /* background-color: cyan; */
   margin: 10px 5px;
 
   @media (max-width: 500px) {
     justify-content: center;
+    width: 100%;
   }
 `;
 
@@ -113,6 +125,13 @@ const CardImage = styled.div`
     width: 250px;
     height: 180px;
     object-fit: cover;
+
+    @media (max-width: 500px) {
+      width: 100%;
+    }
+  }
+  @media (max-width: 500px) {
+    width: 100%;
   }
 `;
 
@@ -129,9 +148,21 @@ const PostTime = styled.div`
 const Title = styled.div`
   font-size: 18px;
   font-weight: 800;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 `;
-const ShortDesc = styled.div`
+const ShortDesc = styled.p`
   font-size: 13px;
   color: #736f6f;
   margin-bottom: 10px;
+  margin: -0.5px 0;
+  text-overflow: ellipsis;
+  display: block;
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  /* white-space: nowrap; */
+  /* border: solid 1px #000; */
 `;
