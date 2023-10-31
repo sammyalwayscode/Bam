@@ -34,6 +34,7 @@ export default Interview;
 
 const Container = styled.div`
   height: 75vh;
+  width: 100%;
   background-color: #087cc5;
   margin-bottom: 50px;
   display: flex;
@@ -51,6 +52,9 @@ const Wrapper = styled.div`
 
   @media (max-width: 600px) {
     width: 95%;
+  }
+  @media (max-width: 500px) {
+    width: 100%;
   }
 `;
 const HoldDiv = styled.div`

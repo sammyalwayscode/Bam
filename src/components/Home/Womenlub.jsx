@@ -25,6 +25,9 @@ const Container = styled.div`
 `;
 const Wrapper = styled.div`
   width: 85%;
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `;
 const Title = styled.div`
   text-align: center;

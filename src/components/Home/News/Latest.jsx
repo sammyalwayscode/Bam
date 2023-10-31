@@ -3,13 +3,14 @@ import ImgOne from "../../../assets/lat2.jpg";
 import ImgTwo from "../../../assets/lat3.jpg";
 import ImgThree from "../../../assets/lat4.jpg";
 import ImgFour from "../../../assets/lat5.jpg";
+import moment from "moment";
 
 const Latest = () => {
   return (
     <Container>
       <Wrapper>
         <DateInfo>
-          <DateDiv>{Date.now()}</DateDiv>
+          <DateDiv> {moment().format("MMMM Do YYYY")} </DateDiv>
           <InfoDiv>Latest News</InfoDiv>
           <hr />
         </DateInfo>
@@ -87,11 +88,15 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
-  background-color: red;
+  /* background-color: red; */
 `;
 const Wrapper = styled.div`
   width: 85%;
-  background-color: darkgoldenrod;
+  /* background-color: darkgoldenrod; */
+
+  @media (max-width: 500px) {
+    width: 95%;
+  }
 `;
 const DateInfo = styled.div`
   hr {
@@ -126,11 +131,12 @@ const MainHold = styled.div`
 const CardDiv = styled.div`
   height: 320px;
   width: 250px;
-  background-color: cyan;
+  /* background-color: cyan; */
   margin: 5px;
 
   @media (max-width: 500px) {
     justify-content: center;
+    width: 100%;
   }
 `;
 
@@ -143,6 +149,14 @@ const CardImage = styled.div`
     width: 250px;
     height: 180px;
     object-fit: cover;
+
+    @media (max-width: 500px) {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 500px) {
+    width: 100%;
   }
 `;
 
@@ -158,7 +172,7 @@ const PostTime = styled.div`
   font-weight: 600;
 `;
 const Title = styled.div`
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 800;
   text-transform: uppercase;
 `;

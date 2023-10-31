@@ -20,9 +20,9 @@ const Header = () => {
           </Logo>
 
           <Navigations>
-            <Navs to="/">
+            <NavsMain to="/">
               <span>Home</span>
-            </Navs>
+            </NavsMain>
             <Navs to="/pricing">
               <span>Ticket</span>
             </Navs>
@@ -114,6 +114,22 @@ const Navigations = styled.div`
   }
 `;
 const Navs = styled.div`
+  color: #000;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+  cursor: pointer;
+  font-size: 15px;
+  /* #F3F7F5
+  #F3F7F5 */
+  span {
+    margin-left: 3px;
+    font-weight: 600;
+  }
+`;
+const NavsMain = styled(Link)`
   color: #000;
   text-decoration: none;
   display: flex;
