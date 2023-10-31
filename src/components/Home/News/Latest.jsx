@@ -84,11 +84,12 @@ export default Latest;
 
 const Container = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
-  /* background-color: red; */
+  background-color: red;
 `;
 const Wrapper = styled.div`
   width: 85%;
