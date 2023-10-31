@@ -48,6 +48,7 @@ const Container = styled.div`
   margin-bottom: 20px;
   @media (max-width: 800px) {
     flex-direction: column;
+    height: 100%;
   }
 `;
 const Section01 = styled.div`
