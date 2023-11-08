@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import InterImg from "../../assets/inter.jpg";
+import InterImg from "../../assets/bam4.jpg";
 
 const Interview = () => {
   return (

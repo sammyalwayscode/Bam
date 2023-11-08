@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import MenImage from "../../assets/men.jpg";
+import MenImage from "../../assets/menTeam.jpg";
 
 const MenClub = () => {
   return (
