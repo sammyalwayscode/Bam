@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import WomenImage from "../../assets/women.jpg";
+import WomenImage from "../../assets/men2.jpg";
 
 const Womenlub = () => {
   return (
     <Container>
       <Wrapper>
-        <Title>Our Women Team</Title>
+        <Title>Our Team</Title>
         <ImageHold>
           <img src={WomenImage} alt="" />
         </ImageHold>

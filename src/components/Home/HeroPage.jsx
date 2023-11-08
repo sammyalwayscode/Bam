@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 // import Hero1 from "../../assets/hero1.jpg";
-import Hero2 from "../../assets/hero2.jpg";
+import Hero2 from "../../assets/up1.jpg";
 import Hero3 from "../../assets/hero3.jpg";
 
 const HeroPage = () => {

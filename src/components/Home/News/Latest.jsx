@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import ImgOne from "../../../assets/lat2.jpg";
-import ImgTwo from "../../../assets/lat3.jpg";
-import ImgThree from "../../../assets/lat4.jpg";
+import ImgOne from "../../../assets/goalkeeper.jpg";
+import ImgTwo from "../../../assets/OIP.jpg";
+import ImgThree from "../../../assets/rematch.jpg";
 import ImgFour from "../../../assets/lat5.jpg";
 import moment from "moment";
 
@@ -25,26 +25,28 @@ const Latest = () => {
                 <PostTime>25th October, 2023</PostTime>
                 <Title>The Friendly Live Match</Title>
                 <ShortDesc>
-                  We are delighted to announce the signing of goalkeeper Harry
+                  We are delighted to announce the signing of goalkeeper Antonia
                   Wright. The 24-year-old, came through
                 </ShortDesc>
                 <strong>Continue Reading</strong>
               </CardHold>
             </CardDiv>
+
             <CardDiv>
               <CardImage>
                 <img src={ImgTwo} alt="" />
               </CardImage>
               <CardHold>
                 <PostTime>20th October, 2023</PostTime>
-                <Title>Our Fanbase Excitment</Title>
+                <Title>Our Incredible Fanbase</Title>
                 <ShortDesc>
-                  We are delighted to announce the signing of goalkeeper Harry
-                  Wright. The 24-year-old, came through
+                Our incredible fanbase is the driving force behind All Star FC's success. 
+                Your unwavering support propels us to new heights, and together, we are unstoppable.
                 </ShortDesc>
                 <strong>Continue Reading</strong>
               </CardHold>
             </CardDiv>
+
             <CardDiv>
               <CardImage>
                 <img src={ImgThree} alt="" />
@@ -53,12 +55,15 @@ const Latest = () => {
                 <PostTime>17th October, 2023</PostTime>
                 <Title>A Better Rematch</Title>
                 <ShortDesc>
-                  We are delighted to announce the signing of goalkeeper Harry
-                  Wright. The 24-year-old, came through
+                Anticipation is building as All Star Football Club gears up 
+                for a rematch that promises to be nothing short of thrilling. The stage is set, and fans 
+                are bracing 
+                themselves for what could be a defining moment in the club's journey.
                 </ShortDesc>
                 <strong>Continue Reading</strong>
               </CardHold>
             </CardDiv>
+
             <CardDiv>
               <CardImage>
                 <img src={ImgFour} alt="" />
@@ -148,7 +153,7 @@ const CardImage = styled.div`
 
   img {
     width: 250px;
-    height: 180px;
+    height: 180px; // I change here from 180 to 280
     object-fit: cover;
 
     @media (max-width: 500px) {
